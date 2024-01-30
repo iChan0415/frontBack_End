@@ -1,0 +1,217 @@
+.verification_container {
+    padding: 15px 75px 0 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+}
+
+section {
+    position: relative;
+  }
+  
+  .verification_title,
+  .verification_search,
+  .verification_table {
+    position: absolute;
+    width: 100%;
+  }
+  
+  .verification_title {
+    top: 0;
+    background-color: #BCE8B1; /* Set your desired background color */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 15px;
+    height: 191px;
+  }
+
+.verification_search {
+    bottom: -360px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    height: 285px;
+    border-radius: 15px;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 30px;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    background-color: #0E3B03;
+    padding: 30px;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.nameVerification {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+}
+
+.serialVerification {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+}
+
+.left h2 {
+    color: #0E3B03;
+}
+
+.left .form-control {
+    width: 75%;
+    height: 45px;
+} 
+
+.verification_search .verify {
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 15px;
+    border: 1.5px solid #2ecc71;
+    text-align: center;
+    width: 95px;
+}
+
+.verification_search .verify:hover {
+    background-color: white;
+    color: #16A765;
+    /* outline: #16A765 solid 2px; */
+    border: #16A765 solid 1.5px;
+}
+
+.verification_search .verify:active {
+    background-color: #2ecc71 !important;
+    color: #fff;
+    border: 1.5px solid #2ecc71 !important;
+}
+
+.serialVerification .icon {
+    color: #2ecc71;
+    width: 20px;
+    height: 20px;
+}
+
+  @media only screen and (max-width: 425px) and (min-width: 320px) {
+    .verification_search {
+        bottom: -400px ;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .verification_search .left {
+        width: 75%;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 15px;
+        gap: 10px;
+    }
+
+    .verification_search .right {
+        width: 75%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .verification_search .right .form-label {
+        font-size: 12px;
+    }
+
+    .verification_search .left h2 {
+        font-size: 12px;
+    }
+
+    .verification_search h2 {
+        font-size: 18px;
+        gap: 15px;
+    }
+
+    .verification_search .left .form-control {
+        width: 100%;
+        height: 20px;
+    } 
+  }
+
+  @media only screen and (max-width: 768px) and (min-width: 425px) {
+    .verification_search {
+        bottom: -405px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .verification_search .left {
+        width: 75%;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 15px;
+        gap: 10px;
+    }
+
+    .verification_search .right {
+        width: 75%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .verification_search .right .form-label {
+        font-size: 12px;
+    }
+
+    .verification_search .left h2 {
+        font-size: 16px;
+    }
+
+    .verification_search h2 {
+        font-size: 18px;
+        gap: 15px;
+    }
+
+    .verification_search .left .form-control {
+        width: 100%;
+        height: 20px;
+    }
+
+  }
+
+  @media only screen and (max-width: 1024px) and (min-width: 769px) {
+    .verification_search .left h2 {
+        font-size: 23px;
+    }
+  }
+
+  @media only screen and (max-width: 1439px) and (min-width: 1025px) {
+    .verification_search .left h2 {
+        font-size: 28px;
+    }
+  }

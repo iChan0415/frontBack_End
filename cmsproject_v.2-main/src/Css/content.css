@@ -1,0 +1,230 @@
+.content {
+    display: flex;
+    padding: 0 75px;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 5px; */
+    background: #EBFFE5;
+    margin-top: 15px; 
+    justify-content: space-between;
+}   
+
+.withSearchBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 500px;
+}
+
+.input-group {
+    width: 35% !important;
+    height: 30px;
+}
+
+.form-control {
+    height: 30px;
+}
+
+.input-group .btn-success{
+    height: 30px;
+}
+
+.content h1 {
+    color: #5e665b;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.content .hr {
+    width: 100%;
+    height: 1.5px;
+    background-color: #5e665b;
+}
+
+.certificates {
+    margin-top: 50px;
+    padding: 0 75px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #EBFFE5;
+    gap: 40px;
+}
+
+.cert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cert img {
+    border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+  }
+
+  .cert:hover .overlay {
+    opacity: 1;
+  }
+  
+  .buttons button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    width: 70px;
+  }
+  
+  .buttons .view {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 15px;
+    border: 1.5px solid #3498db;
+    text-align: center;
+  }
+  
+  .buttons .download {
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 15px;
+    border: 1.5px solid #2ecc71;
+    text-align: center;
+  }
+  
+  .buttons .view:hover {
+    background-color: white;
+    color: #006384;
+    border: 2px solid #006384;
+  }
+
+  .buttons .download:hover {
+    background-color: white;
+    color: #16A765;
+    border: 2px solid #16A765;
+  }
+.cert img {
+    width: 329px;
+    height: 200px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.input-group .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group .btn {
+    width: 55px;
+}
+
+.input-group .btn .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.withSearchBar .btn-success:hover {
+    background-color: white;
+    color: #16A765;
+    border: 2px solid #16A765;
+}
+
+.certificate_thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 1024px){
+    .withSearchBar{
+        gap: 200px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .withSearchBar{
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        align-items: center;
+    }
+
+    .content h1 {
+        font-size: 35px;
+    }
+
+    .certificates {
+        padding: 0 25px;
+        padding-bottom: 25px;
+        gap: 25px;    
+        margin-top: 35px;
+    }
+
+    .cert img {
+        width: 286px;
+        height: 178.67px;
+    }
+
+    .withSearchBar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    
+    .input-group {
+        width: 100% !important;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    
+    .content {
+        padding: 0 35px;
+    }
+    .content h1 {
+        font-size: 35px;
+    }
+
+    .input-group {
+        width: 100% !important;
+        height: 25px;
+    }
+    
+}

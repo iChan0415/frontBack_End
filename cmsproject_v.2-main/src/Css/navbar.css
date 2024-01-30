@@ -1,0 +1,257 @@
+.btns{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 0 18.33px 0 18.33px;
+    background-color: #D9FFCF;
+    height: 69px !important;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 171.667px;
+    height: 50px; 
+}
+
+#navbar {
+    margin-bottom: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#navbar li a:hover,
+#navbar li a:active {
+    color: #126912;
+}
+
+#navbar li a.active {
+    color: #126912; /* Change this to the desired color for the active link */
+}
+
+#mobile {
+    display: None;
+    align-items: center;
+}
+
+.profile_img {
+    border: 1.5px solid #126912;
+    border-radius: 50px;
+    width: 23px;
+    height: 23px;
+}
+
+.mobile_profile {
+    border: 2px solid #126912;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+.button_profile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: white !important;
+    color: #126912 !important;
+    font-weight: 600 !important;
+}
+
+.dropdown-menu.show {
+    background-color: #D9FFCF;
+}
+
+
+.dropdown-menu.show {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400 !important;
+    line-height: normal;
+    left: 0 !important;
+    transform: translateX(-50%);
+}
+
+.dropdown-menu.show .dropdown-item {
+    text-align: start;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-right: 50px;
+}
+
+.profile_side .dropdown-menu.show .dropdown-item:last-child {
+    color:#BF3131 !important;
+}
+
+.profile_side  .dropdown-menu.show .dropdown-item:last-child:hover,
+.profile_side  .dropdown-menu.show .dropdown-item:last-child:active {
+    color:#fd0f0f !important;
+}
+
+.dropdown-menu.show .dropdown-item:hover {
+    background-color: transparent;
+    color: #126912 !important;
+}
+
+.dropdown-menu.show .dropdown-item.active {
+    background-color: transparent;
+    color: #126912 !important;
+}
+
+.profile_info {
+    display: none;
+}
+
+.profile_link {
+    display: none;
+}
+
+
+@media screen and (max-width: 769px) {
+    nav {
+        justify-content: space-between;
+    }
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 70px;
+        right: -350px;
+        width: 330px;
+        height: 100vh;
+        padding: 40px 0  0 10px;
+        background: rgba( 217, 255, 207, 0.65 );
+        box-shadow: 0 8px 32px -8px rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 9px );
+        -webkit-backdrop-filter: blur( 9px );
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        z-index: 1000;
+    }
+
+    #navbar.active {
+        right: 0;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #navbar li a:hover,
+    #navbar li a:active {
+        color: #126912;
+    }
+
+    #navbar li a.active {
+        text-decoration: underline; /* You can customize this based on your design */
+        color: #126912; /* Change this to the desired color for the active link */
+    }
+
+    #mobile {
+        display: block;
+        color: white;
+    }
+
+    #mobile i {
+        font-size: 24px;
+        cursor: pointer;
+        color: #126912;
+    }
+
+    .profile_side {
+        display: none;
+    }
+
+    .mycourse_dd .dropdown-toggle.show {
+        margin-bottom: 50px;
+    }
+
+    .profile_info {
+        display: block;
+        width: 100%;
+        background-color: #BCE8B1;
+        padding: 10px !important;
+        border-radius: 25px;
+        margin-bottom: 10px !important;
+        text-shadow: transparent !important;
+    }
+    .profile_info img {
+        border: 2px solid #126912;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+    }
+
+   .profile_info_con {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile_info_name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        line-height: 5px;
+        gap: 10px;
+    }
+
+    .profile_info_name p {
+        margin: 5px;
+    }
+
+    .profile_info_name .profile_fName {
+        font-weight: 600;
+    }
+
+    .profile_info_name .profile_email {
+        font-size: 14px !important;
+    }
+
+    .profile_divider {
+        height: 20px; /* Set the height of the divider as needed */
+        width: 1px;   /* Set the width of the divider as needed */
+        background-color: #126912; /* Set the color of the divider */
+        margin: 0 10px; /* Adjust the margin as needed for spacing */
+      }
+
+      #navbar .divider {
+        height: 2px;
+        background-color: #0e3b03; /* Adjust the color of the divider as needed */
+        margin: 0 auto; /* Adjust the margin as needed for spacing */
+        margin-bottom: 20px;
+        width: 80%;
+      }
+
+      .profile_link {
+        display: block;
+    }
+}
