@@ -52,7 +52,7 @@ public class QuizTakenController {
 
     @GetMapping("/userQuizTkn/{quiztknID}")
     public List<QuizDetailsDTO> getQuizDetailsByQuizTakenId(@PathVariable Long quiztknID) {
-        return quizTakenService.findQuizDetailsByQuizTakenId(quiztknID);
+        return quizTakenService.getQuizDetailsByQuizTakenId(quiztknID);
     }
     
 }
