@@ -18,10 +18,10 @@ import Team_D_HeaderV2 from "./Team_D_HeaderV2";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const Team_D_Content = () => {
-  const pdfPath = "/PDF/Joshua Allada-Java programming.pdf";
+  const pdfPath = "/PDF/Sample.pdf";
   const [data, setData] = useState({
     id: "1",
-    pdfName: "Joshua Allada-Java programming.pdf",
+    pdfName: "Sample.pdf",
     courseTitle: "HTML and CSS",
   });
   const [thumbnailUrl, setThumbnailUrl] = useState(null);

@@ -17,7 +17,7 @@ import com.example.sandboxv2.sandboxv2.services.UserService;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin("http://localhost:5174/")
+@CrossOrigin("http://localhost:5173/")
 public class UserController {
     @Autowired
     private UserService userService;

@@ -12,7 +12,7 @@ const CertificateGenerator = () => {
     const loadQuiz = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/api/quizTkn/byUserId/2"
+          "http://localhost:8080/api/quizTkn/user/2"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch quiz data");
@@ -33,26 +33,27 @@ const CertificateGenerator = () => {
       return;
     }
 
-    const name = quiz[0].users.full_name;
-    const userId = quiz[0].users.userID;
-    console.log(userId);
-    const instructor = quiz[0].quiz.course.instructor.full_name;
-    const course = quiz[0].quiz.course.title;
-    const courseCode = quiz[0].quiz.course.courseID;
+    const name = quiz[0].userFullName;
+    const userId = quiz[0].userID;
+    console.log(userId)
+    console.log(quiz[0].userFullName)
+    const instructor = quiz[0].instructorFullName;
+    const course = quiz[0].courseTitle;
+    const courseCode = quiz[0].courseID;
     //console.log(courseCode);
     const quiztknId = quiz[0].quiztknID;
 
-    const creditHours = quiz[0].quiz.course.start_date;
+    const creditHours = quiz[0].courseStartDate;
     console.log(creditHours);
 
     // Calculate the percentage
-    const quizScore = quiz[0].quiz_score;
-    console.log(quiz[0].quiz_score);
-    const targetScore = quiz[0].quiz.target_score;
-    console.log(quiz[0].quiz.target_score);
+    const courseQuizScore = quiz[0].quizScore;
+    console.log(quiz[0].quizScore);
+    const courseTargetScore = quiz[0].targetScore;
+    console.log(quiz[0].targetScore);
 
     // Check if the percentage is at least 80%
-    const percentage = (quizScore / targetScore) * 100;
+    const percentage = (courseQuizScore / courseTargetScore) * 100;
 
     if (percentage >= 80) {
       const doc = new jsPDF({

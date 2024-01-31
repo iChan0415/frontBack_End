@@ -17,7 +17,7 @@ import com.example.sandboxv2.sandboxv2.services.CourseService;
 
 @RestController
 @RequestMapping("/api/courses")
-@CrossOrigin("http://localhost:5174/")
+@CrossOrigin("http://localhost:5173/")
 public class CourseController {
     @Autowired
     private CourseService courseService;

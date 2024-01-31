@@ -12,15 +12,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.sandboxv2.sandboxv2.dto.QuizDetailsDTO;
 import com.example.sandboxv2.sandboxv2.entity.QuizTaken;
 import com.example.sandboxv2.sandboxv2.services.QuizTakenService;
 
 @RestController
 @RequestMapping("/api/quizTkn")
-@CrossOrigin("http://localhost:5174/")
+@CrossOrigin("http://localhost:5173/")
 public class QuizTakenController {
     @Autowired
     private QuizTakenService quizTakenService;
+
 
     @GetMapping
     public List<QuizTaken> getAllQuizTaken() {
@@ -46,4 +48,11 @@ public class QuizTakenController {
     public void deleteQuizTaken(@PathVariable Long quiztknID) {
         quizTakenService.deleteQuizTaken(quiztknID);
     }
+
+
+    @GetMapping("/user/{user_ID}")
+    public List<QuizDetailsDTO> getQuizDetailsByUserId(@PathVariable("user_ID") Long user_ID) {
+        return quizTakenService.getQuizDetailsByUserId(user_ID);
+    }
+    
 }

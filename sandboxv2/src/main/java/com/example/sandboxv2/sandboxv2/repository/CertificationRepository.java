@@ -19,7 +19,10 @@ public interface CertificationRepository
   )
   List<Certification> findByUserId(@Param("user_ID") Long user_ID);
 
-  @Query("SELECT new com.example.sandboxv2.sandboxv2.dto.VerificationResponse(cr.serial_no, cr.quizTaken.quiz.course.title, cr.quizTaken.users.full_name) FROM Certification cr WHERE cr.serial_no = :serial_no")
-  List<VerificationResponse> findBySerialNumberWithDetails(@Param("serial_no") String serial_no);
-  
+  @Query(
+    "SELECT new com.example.sandboxv2.sandboxv2.dto.VerificationResponse(cr.serial_no, cr.quizTaken.quiz.course.title, cr.quizTaken.users.full_name) FROM Certification cr WHERE cr.serial_no = :serial_no"
+  )
+  List<VerificationResponse> findBySerialNumberWithDetails(
+    @Param("serial_no") String serial_no
+  );
 }
