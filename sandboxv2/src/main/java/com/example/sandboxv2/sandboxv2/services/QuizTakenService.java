@@ -34,8 +34,8 @@ public class QuizTakenService {
         quizTakenRepository.deleteById(quiztknID);
     }
 
-    public List<QuizDetailsDTO> getQuizDetailsByUserId(Long user_ID) {
-        return quizTakenRepository.findQuizDetailsByUserId(user_ID);
+    public List<QuizDetailsDTO> findQuizDetailsByQuizTakenId(Long quiztknID) {
+        return quizTakenRepository.findQuizDetailsByQuizTakenId(quiztknID);
     }
 }
     

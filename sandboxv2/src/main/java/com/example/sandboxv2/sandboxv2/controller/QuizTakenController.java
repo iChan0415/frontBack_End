@@ -50,9 +50,9 @@ public class QuizTakenController {
     }
 
 
-    @GetMapping("/user/{user_ID}")
-    public List<QuizDetailsDTO> getQuizDetailsByUserId(@PathVariable("user_ID") Long user_ID) {
-        return quizTakenService.getQuizDetailsByUserId(user_ID);
+    @GetMapping("/userQuizTkn/{quiztknID}")
+    public List<QuizDetailsDTO> getQuizDetailsByQuizTakenId(@PathVariable Long quiztknID) {
+        return quizTakenService.findQuizDetailsByQuizTakenId(quiztknID);
     }
     
 }

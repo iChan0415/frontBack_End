@@ -12,7 +12,7 @@ const CertificateGenerator = () => {
     const loadQuiz = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/api/quizTkn/user/2"
+          "http://localhost:8080/api/quizTkn/userQuizTkn/16"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch quiz data");
@@ -35,8 +35,8 @@ const CertificateGenerator = () => {
 
     const name = quiz[0].userFullName;
     const userId = quiz[0].userID;
-    console.log(userId)
-    console.log(quiz[0].userFullName)
+    console.log(userId);
+    console.log(quiz[0].userFullName);
     const instructor = quiz[0].instructorFullName;
     const course = quiz[0].courseTitle;
     const courseCode = quiz[0].courseID;
@@ -99,7 +99,12 @@ const CertificateGenerator = () => {
 
       doc.setFontSize(17);
       doc.setTextColor(162, 123, 66);
-      doc.text(`${formattedNewDate}`, coursePosition - 60, 128, {
+
+      // Use a fixed position instead of coursePosition
+      const datePositionX = 101; // Adjust this value as needed
+      const datePositionY = 128;
+
+      doc.text(`${formattedNewDate}`, datePositionX, datePositionY, {
         align: "left"
       });
 
@@ -127,12 +132,6 @@ const CertificateGenerator = () => {
         signatureHeight
       );
 
-      // Serial number display PDF
-      const serialNumber = Math.floor(Math.random() * 1000000);
-      doc.setFontSize(11);
-      doc.setTextColor(162, 123, 66);
-      doc.text(`B55-${serialNumber}`, 85, 158, { align: "left" });
-        
       // Coursecode display PDF
       doc.setFontSize(11);
       doc.setTextColor(162, 123, 66);
@@ -144,6 +143,26 @@ const CertificateGenerator = () => {
       doc.setFontSize(11);
       doc.setTextColor(162, 123, 66);
       doc.text(`${formattedDate}`, 90, 154, { align: "right" });
+
+      const SerialcurrentDate = new Date();
+      const SerialformattedDate = SerialcurrentDate.toISOString()
+        .split("T")[0]
+        .replace(/-/g, ""); // Formats as "YYYYMMDD"
+
+      console.log(SerialformattedDate); // Add this line to log the formatted date
+
+      // Serial number display PDF
+      const serialNumber = Math.floor(Math.random() * 100);
+      doc.setFontSize(11);
+      doc.setTextColor(162, 123, 66);
+      doc.text(
+        `B55-${SerialformattedDate}${userId}${courseCode}${serialNumber}`,
+        85,
+        158,
+        {
+          align: "left"
+        }
+      );
 
       const startDate = new Date(creditHours);
 
@@ -157,13 +176,11 @@ const CertificateGenerator = () => {
       const calculatedCreditHours = daysDifference * 3;
 
       console.log(`Calculated Credit Hours: ${calculatedCreditHours}`);
-      
 
       // Credit Hours display PDF
       doc.setFontSize(11);
       doc.setTextColor(162, 123, 66);
       doc.text(`${calculatedCreditHours} hrs`, 72, 167.2, { align: "left" });
-
 
       // Save the PDF file to send to the backend
       const pdfFile = new File([doc.output("blob")], `${name}-${course}.pdf`, {
@@ -172,7 +189,10 @@ const CertificateGenerator = () => {
 
       // Create form data to send the file to the backend
       const formDataToSend = new FormData();
-      formDataToSend.append("serial_no", `B55-${serialNumber}`);
+      formDataToSend.append(
+        "serial_no",
+        `B55-${SerialformattedDate}${userId}${courseCode}${serialNumber}`
+      );
       formDataToSend.append("file", pdfFile);
       formDataToSend.append("date_issued", formattedDate);
       formDataToSend.append("criteria", "test");
@@ -223,24 +243,20 @@ const CertificateGenerator = () => {
 
   return (
     <>
-    <div>
+      <div>
+        <Team_D_HeaderV2 />
 
-      <Team_D_HeaderV2 />
-        
         {/* Button to generate certificate */}
         <h1>COURSE ASSESMENT</h1>
         <div>
           <p>
-            Click sumbit button to finish the assessment and get Certified on this
-            Course
+            Click sumbit button to finish the assessment and get Certified on
+            this Course
           </p>
         </div>
         <button onClick={generateCertificate}>Sumbit</button>
-
       </div>
-
     </>
-
   );
 };
 

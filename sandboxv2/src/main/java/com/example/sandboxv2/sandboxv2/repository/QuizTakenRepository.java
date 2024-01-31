@@ -27,10 +27,12 @@ public interface QuizTakenRepository extends JpaRepository<QuizTaken, Long> {
         "qt.users.full_name, " +
         "qt.users.userID, " +
         "qt.quiz.target_score, " +
-        "qt.quiz_score, " + "qt.quiztknID) " +
+        "qt.quiz_score, " +
+        "qt.quiztknID) " +
         "FROM QuizTaken qt " +
-        "WHERE qt.users.userID = :user_ID")
-    List<QuizDetailsDTO> findQuizDetailsByUserId(@Param("user_ID") Long user_ID);
+        "WHERE qt.quiztknID = :quiztknID")
+    List<QuizDetailsDTO> findQuizDetailsByQuizTakenId(@Param("quiztknID") Long quiztknID);
+    
     
 
 
