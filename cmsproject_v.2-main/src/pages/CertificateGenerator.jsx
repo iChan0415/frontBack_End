@@ -144,6 +144,8 @@ const CertificateGenerator = () => {
       doc.setTextColor(162, 123, 66);
       doc.text(`${formattedDate}`, 90, 154, { align: "right" });
 
+      console.log(formattedDate);
+
       const SerialcurrentDate = new Date();
       const SerialformattedDate = SerialcurrentDate.toISOString()
         .split("T")[0]
